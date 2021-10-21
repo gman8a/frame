@@ -1,0 +1,69 @@
+#! /bin/bash
+# make frame output file.
+# converts CP437 to UTF-8 character mapping for display on modern terminals.
+#
+# input: filename.FRM
+# output: ./frm_out/filename.OUT
+
+#-- get input file
+fn="$1"
+if [[ ! -e $fn ]]; then
+    echo "Opps! Can not find file: $fn    Try again.";
+	exit;
+fi
+
+#--- assure output directory exists
+#https://stackoverflow.com/questions/793858/how-to-mkdir-only-if-a-directory-does-not-already-exist
+#mkdir -p frm_out
+out_dir="frm_out"
+
+if [[ ! -e $out_dir ]]; then
+    mkdir $out_dir
+
+elif [[ ! -d $dir ]]; then
+    #echo "$out_dir already exists but is not a directory" 1>&2
+	echo
+fi
+
+#--- get filename w/o extension .FRM or .frm
+#https://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
+fn2="${fn%%.*}"
+
+#--- do it
+cat "$fn"|../frame|iconv --from-code=IBM437 --to-code=UTF-8 > ${out_dir}/${fn2}.OUT
+
+#---output to 'modern terminal' that using UTF-8 character mapping
+cat ${out_dir}/${fn2}.OUT
+
+
+function doc1(){
+cat <<EOF
+		'Frame' is compiled on a Linux host using Free Pascal Compiler (FPC) or GNU Pascal Compiler (GPC)
+
+		The file: c builds the 'frame' executable.
+
+		Sample forms are located in the folder: /math_forms
+		Theses forms can be 'framed' or executed using the command line:
+
+		   $ cat CARRY-15.FRM|./frame|iconv --from-code=IBM437 --to-code=UTF-8
+
+		--- AGAIN i.e.---
+		Folder /math_forms holds many example forms having file extension .FRM or .frm
+
+		They can be processed from a linux command line as follows:
+
+		~/frame/math_forms$ cat CARRY-15.FRM|./frame|iconv --from-code=IBM437 --to-code=UTF-8
+
+		Many of the sample forms were developed using DOS-OS, thus the character set was Code-Page-437 aka CP437, aka IBM437
+		To maintain backwards compadibility these forms are kept and used as CP437 forms,
+		and the resulting 'frame' output is converted to UTF-8 character set for proper display on modern terminal and web/browser portals.
+		 
+		**** To edit one of these *.FRM files having CP437 coding hosted on a Linux OS, 
+		   I find the fastest, easiest and best was, is to login to the host using PuTTY with setting:
+			  PuTTY: window -> Translation -> Remote Character Set -> CP437
+			  then use your favorite editor, such as vim, nano or mcedit.
+EOF
+} #fn doc1
+
+#end of file
+
