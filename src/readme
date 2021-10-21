@@ -1,0 +1,10 @@
+'Frame' is compiled on a Linux host using Free Pascal Compiler (FPC) or GNU Pascal Compiler (GPC)
+
+The file: c builds the 'frame' executable.
+
+Sample forms are located in the folder: /math_forms
+Theses forms can be 'framed' or executed using the command line:
+
+   $ cat CARRY-15.FRM|./frame|iconv --from-code=IBM437 --to-code=UTF-8
+
+
