@@ -1,0 +1,24 @@
+╒═════════════════════════════════════════════════════════════════════════════╕
+│                         HOUSE CARRYING BEAM DESIGN                          │
+│                      (a simple beam with a uniform load)                    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│    Job Name :  Gary & Stephanie Argraves, House Beam                        │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                Floor Loading    =      40.0  lbs/sq.-ft.                    │
+│        Width of Room CARRIED    =      28.0  ft.                            │
+│                  Beam Length  L =      18.0  ft.                            │
+├─────────────────────────────────────────────────────────────────────────────┤
+│         Uniform Beam Loading  W =      1120  lbs/ft                         │
+│        Reactions at each end  R =     10080  lbs                            │
+│        Maximum Design Moment  M =     45360  ft-lbs                         │
+│     Allowable Bending Stress  σ =     21000  psi    (for Grade A36 Steel)   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│     Design Section Modulus   Sx =      25.9  inches^3                       │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│     Write In the Shape Here ____________________________________________    │
+│                                                                             │
+│     * Make sure your section is COMPACT for the full beam length !          │
+│       Lu <= 18.0 feet                                                       │
+╘═════════════════════════════════════════════════════════════════════════════╛
+
