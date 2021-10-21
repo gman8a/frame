@@ -6,7 +6,7 @@ They can be processed from a linux command line as follows:
 
  Many of the sample forms were developed using DOS-OS, thus the character set was Code-Page-437 aka CP437, aka IBM437
  To maintain backwards compadibility these forms are kept and used as CP437 forms,
- and the resulting 'frame' output is converted to CTF-8 character set for proper display on modern terminal and web/browser portals.
+ and the resulting 'frame' output is converted to UTF-8 character set for proper display on modern terminal and web/browser portals.
  
  Here is a sample 80 character wide page 'frame' output.
  
