@@ -8,6 +8,11 @@ They can be processed from a linux command line as follows:
  To maintain backwards compadibility these forms are kept and used as CP437 forms,
  and the resulting 'frame' output is converted to UTF-8 character set for proper display on modern terminal and web/browser portals.
  
+ **** To edit one of these *.FRM files having CP437 coding hosted on a Linux OS, 
+   I find the fastest, easiest and best way is to login to the host using PuTTY with setting:
+      PuTTY: window -> Translation -> Remote Character Set -> CP437
+      then use your favorite editor, such as vim, nano or mcedit.
+ 
  Here is a sample 80 character wide page 'frame' output.
  
  ~/frame/math_forms$ cat CARRY-15.FRM|../frame|iconv --from-code=IBM437 --to-code=UTF-8
