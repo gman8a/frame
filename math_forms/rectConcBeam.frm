@@ -1,7 +1,18 @@
+.c NOTE: this form uses character mapping: Unicode character UTF-8; as sourced from within the PDF file.
+.c  using frame .Look 3 because not converting the framing characters from CP437 to UTF-8
+.c              This is because some UTF-8 char. do not map into CP437, in particular:
+.c                      GREEK SMALL LETTER BETA:  UTF9: <CE><B2>   CP437: 225
+.c
+.c              see URL: https://en.wikipedia.org/wiki/Code_page_437
+.c              see URL: https://jdhao.github.io/2020/10/07/nvim_insert_unicode_char/
+.c 
+.c BEAM DESIGN SOURCE
+.c      http://www.civilpe.net/wp-content/uploads/2012/08/Reinforced-Concrete-Beam-Design-ACI-318-08.pdf
+.c      https://pdfcoffee.com/reinforced-concrete-beam-design-aci-318-08-pdf-free.html              
+.c
+.L3
 .T
-   Reinforced Concrete Beam Design ACI 318-08
-   http://www.civilpe.net/wp-content/uploads/2012/08/
-              Reinforced-Concrete-Beam-Design-ACI-318-08.pdf
+	Reinforced Concrete Beam Design ACI 318-08
               
   Required:
     - Determine the nominal moment capacity, ΦMn
