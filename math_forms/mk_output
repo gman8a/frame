@@ -30,7 +30,24 @@ fi
 fn2="${fn%%.*}"
 
 #--- do it
-cat "$fn"|../frame|iconv --from-code=IBM437 --to-code=UTF-8 > ${out_dir}/${fn2}.OUT
+if [ "$fn" == "rectConcBeam.frm" ]; then
+
+        # NOTE: this form uses character mapping: Unicode character UTF-8; as sourced from within the PDF file.
+        # using frame .Look 3 because not converting the framing characters from CP437 to UTF-8
+        #               This is because some UTF-8 char. do not map into CP437, in particular:
+        #                       GREEK SMALL LETTER BETA:  UTF9: <CE><B2>   CP437: 225
+        #
+        #               see URL: https://en.wikipedia.org/wiki/Code_page_437
+        #               see URL: https://jdhao.github.io/2020/10/07/nvim_insert_unicode_char/
+
+        echo "File: $fn already used UTF-8 code mapping. ...Skipping convert pipe."
+
+        cat "$fn"|../frame > ${out_dir}/${fn2}.OUT
+
+else
+        cat "$fn"|../frame|iconv --from-code=IBM437 --to-code=UTF-8 > ${out_dir}/${fn2}.OUT
+fi
+
 
 #---output to 'modern terminal' that using UTF-8 character mapping
 cat ${out_dir}/${fn2}.OUT
