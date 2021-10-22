@@ -1,0 +1,72 @@
+╒═════════════════════════════════════════════════════════════════════════════╕
+│Given:    A series of 45-ft. span composite beams at 10 ft. o/c are          │
+│carrying the loads shown below.  The beams are ASTM A992 and are             │
+│unshored. The concrete has f'c = 4 ksi. Design a typical floor beam          │
+│with 3 in. 18 gage composite deck, and 4 in. normal weight concrete          │
+│above the deck,  for fire protection and mass.    Select an                  │
+│appropriate beam and determine the required number of shear studs.           │
+│                                                                             │
+│see: http://www.civil.umd.edu/ccfu/ref/AISC_ExamI1&2&3.pdf                   │
+│see: http://faculty.delhi.edu/hultendc/AECT250-Lecture%207.pdf               │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│Material Properties:                                                         │
+│  f'c =   4     Ksi Concrete Compressive Strength                            │
+│  Fy  =   50    ksi Steel Beam Yield Strength                                │
+│  Fu  =   65    ksi Steel Beam Ultimate strength                             │
+│                                                                             │
+│Layout:                                                                      │
+│  len     =  45       feet   span composite beams                            │
+│  bm_sp =  10     feet   beam spacing feet o/c                               │
+│  t_slab  =  7.5      inches slab thickness                                  │
+│                                                                             │
+│Loading:                                                                     │
+│  dl_slab    =  0.075       conc. slab weight kip/ft2 (6"/12 ftx150#/ft3)    │
+│  dl_beam_wt =  0.008       Steel beam weight kip/ft2 (assumed)              │
+│  dl_misc    =  0.010       Miscellaneous     kip/ft2 (ceiling etc.)         │
+│  ll_non_red =  0.100       Non-reduced       kip/ft2 (live loading)         │
+│                                                                             │
+│                                                                             │
+│Solution:                                                                    │
+│                                                                             │
+│Loading:                                                                     │
+│  Since each beam is spaced at   10.00 feet o.c.                             │
+│  Dead load total= wd=(dl_slab+dl_beam_wt+dl_misc)*bm_sp =  0.930 kips/ft    │
+│  Live load total= wl=(ll_non_red)                *bm_sp =  1.000 kips/ft    │
+│                                                                             │
+│Construction dead load (unshored) = 0.083 kip/ft2  (10 ft) = 0.83 kips/ft    │
+│Construction live load (unshored) = 0.020 kip/ft2  (10 ft) = 0.20 kips/ft    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│Determine the required flexural strength:                                    │
+│LRFD:                                                                        │
+│    wu = 1.2 * wd + 1.6 * wl  =    2.72  kip/ft                              │
+│    Mu = wu * len^2 / 8       =   687.5  kip-ft                              │
+│ASD:                                                                         │
+│    wa = wd  + wl             =    1.93  kip/ft                              │
+│    Ma = wa * len^2 / 8       =   488.5  kip-ft                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│Determine beff:                                                              │
+│  The effective width of the concrete slab is the sum of the effective       │
+│  widths for each side of the beam centerline, which shall not exceed:       │
+│                                                                             │
+│  (case 1) one-eighth of the beam span, center to center of supports         │
+│     beff1 = len / 8 * 2     =   11.25 feet                                  │
+│  (case 2) one-half the distance to center-line of the adjacent beam         │
+│     beff2 = bm_sp /2 * 2  =   10.00 feet                                    │
+│  (case 3) the distance to the edge of the slab                              │
+│     Not applicable                                                          │
+│                                                                             │
+│   beff = beff2  =   10.00 feet   case #2 controls                           │
+├─────────────────────────────────────────────────────────────────────────────┤
+│Calculate the moment arm for the concrete force measured from the top        │
+│  of the steel shape, Y2.                                                    │
+│                                                                             │
+│  Assume a=1 Effective concrete thickness                                    │
+│  Some assumption must be made to start the design process. An               │
+│  assumption of 1.0 in. has proven to be a reasonable starting point in      │
+│  many design problems.                                                      │
+│                                                                             │
+│  a = Ast * Fy / (0.85 * f'c * (bm_sp*12))  =    2.45                        │
+│  Assume a =    1.00   (or 2 in. for initial trial size)                     │
+│   Y2 = t_slab - a/2  =    7.00 inches                                       │
+╘═════════════════════════════════════════════════════════════════════════════╛

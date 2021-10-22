@@ -1,0 +1,190 @@
+╒═════════════════════════════════════════════════════════════════════════════╕
+│   STRENGTH DESIGN OF CONCRETE BEAMS                                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  Step 1. Select Tension reinforcement Ratio  σ = Ast/Ac = Ast/(b∙d)         │
+│                                                                             │
+│          Cracking will be minimized by keeping σ to less than half          │
+│          the maximum allowable (i.e., 0.375 of σbalanced), particularly     │
+│          when grade 40 of higher steel is used.  A general rule used to     │
+│          design economical beams is to try to satisfy the equation:         │
+│                                                                             │
+│              σ∙fy/f'c ≈ 0.18   (beams only)         EQ.#1                   │
+│                                                                             │
+│                                                                             │
+│  ß1         =    0.85  =     0.85                                           │
+│  f'c        =    3500                                                       │
+│  fy         =   40000                                                       │
+│                                                                             │
+│                                                                             │
+│  σ_Bal.     =  σb = 0.85 * (ß1) * f'c/fy * (87000/(87000+fy))  =  0.0433    │
+│  σ_Max.     =       0.75 * σb                                  =  0.0325    │
+│  σ          =  σ  = 0.18 *f'c / fy      from EQ.#1             =  0.0158    │
+│  σ_Min.     =       200 / fy                                   =  0.0050    │
+│                                                                             │
+│  Ckeck : σ_Min < σ < σ_Max                                                  │
+│                                                                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  Step 2.  Calculate the Coefficient of resistance, Ru, defined as Mn/(bd²). │
+│                                                                             │
+│   m               = fy / (0.85*f'c)                            =   13.45    │
+│  Ru               = σ * fy * (1 - σ*m/2)                       =  563.29    │
+│                                                                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  Step 3.  Calculate the required value of bd² from Equation #2              │
+│                                                                             │
+│   Moment capacity reduction factor  φ =  0.90                               │
+│                                                                             │
+│                     bd² = Mu/(φ∙Ru) = Mn / Ru          EQ.#2                │
+│                                                                             │
+│  Ultimate Moment    Mu  = 1.4 ∙ MD  +  1.7 ∙ ML        EQ.#3                │
+│                                                                             │
+│                                                                             │
+│  Uniform   Live Load  wL  = (100+100)*3               =  600  #/ft          │
+│  Uniform   Dead Load  wD  = (4*150)*3                 = 1800  #/ft          │
+│  Conc.Beam Dead Load   f73=(36*7)/144*150             =  263  #/ft          │
+│  Length of Beam         l = 11                        =   11  feet          │
+│                                                                             │
+│  Moment due to Live Load   ML = (wL)     * l^2/8     =     9075 ft-#        │
+│  Moment due to Dead Load   MD = (wD+wDbm)* l^2/8     =    31195 ft-#        │
+│                                                                             │
+│  Factored Moment           Mu = 1.4 * MD + 1.7 * ML  =    59101 ft-#        │
+│                                                                             │
+│  Calculated bd²            bd²= Mu*12 / (φ * Ru)     =   1398.9 in^3        │
+│                                                                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  Step 4. Size the Conc. Beam so that bd² is approimately equal to the       │
+│          value calculated in step 3.  A good choice is to keep d/b between  │
+│          1.75 and 2.00. Size the beam to the nearest ¼ inch.                │
+│                                                                             │
+│           d/b =   .1458                                                     │
+│           d   = ( d/b * bd²)^ (1/3)    =      5.89 inches                   │
+│           b   = d / d/b                =     40.37 inches                   │
+│                                                                             │
+│           d   = RND(d*4)/4             =      6.00 inches rounded to ¼"     │
+│           b   = RND(b*4)/4             =     40.25 inches rounded to ¼"     │
+│                                                                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  Step 5. If  the actual bd² quantity is greatly different from              │
+│          the calculated bd² value of step 3 then recalculate σ.             │
+│                                                                             │
+│  Actual bd²          bd²= b * d^2        =   1449.0 in^3                    │
+│                                                                             │
+│  Ru,revised          ru= Mu*12/φ /bd²    =    543.83 in-#                   │
+│                                                                             │
+│  σ ,revised          σ  = σ * ru/Ru      =   0.01521                        │
+│                                                                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  Step 6. Calculate the required Steel.                                      │
+│                                                                             │
+│            Ast = σ * b * d      =      3.67 sq.inches                       │
+│                                                                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  Step 7. Select the reinforcement steel bars to satisfy the distribution    │
+│          and placement requirements of the ACI code.                        │
+│          Refer to table 14.5 and 14.6.                                      │
+│                                                                             │
+│                                                                             │
+│          Bars Size = # 7                                                    │
+│                                                                             │
+│          Single Bar Area = pi*(7/8/2)^2    =    0.601  sq.in.               │
+│                                                                             │
+│          Try Using  #bar=Ast/(Area)        =     6.11  Bars                 │
+│                                                                             │
+╘═════════════════════════════════════════════════════════════════════════════╛
+╒═════════════════════════════════════════════════════════════════════════════╕
+│  Step 8.  Specify the depth of concrete protection to satisfy the ACI code. │
+│           Cover should be measured from the lower stirrup surface.          │
+│           Note: Concrete protection and cover depth, dc, are different.     │
+│                                                                             │
+│           Concrete protection =  1.25                                       │
+│                                                                             │
+│            dst is the distance from the steel C.L. to the bottom layer.     │
+│                                                                             │
+│            dc = ½ bar φ  +  stir φ  +  1.25 "                               │
+│            dc = Bar/8/2  +  Stir/8  +  prot  =    2.06 inches               │
+│            dst=(Bar/8+dLay) * (#Lay-1)/2     =    0.00 in.                  │
+│                                                                             │
+│            dst= RND(dst*4)/4  rounded to ¼"  =    0.00 in.                  │
+│            dc = RND(dc *4)/4  rounded to ¼"  =    2.00 in.                  │
+│            d  =                                   6.00 in.                  │
+│           ===================================================               │
+│            h  =  d + dc + dst                =    8.00 inches               │
+│                                                                             │
+│                                                                             │
+│            f'c   =   3500   psi                                             │
+│            fy    =  40000   psi                                             │
+│                                                                             │
+│              Use   6.11  #       7 Bars                                     │
+│                                                                             │
+│                          +--- b =  40.25in.--+                              │
+│                          |                   |                              │
+│        _____ Beam Top ___|                   |______                        │
+│        |                 ░░░░░░░░░░░░░░░░░░░░░     |                        │
+│        |                 ░                   ░     |                        │
+│        |                 ░  ▌             ▐  ░     |                        │
+│        |                 ░  ▌             ▐  ░     |                        │
+│        |                 ░  ▌   # 3       ▐  ░     |                        │
+│        |                 ░  ▌   Stirrup-->▐  ░     |                        │
+│        |                 ░  ▌             ▐  ░     |                        │
+│        |                 ░  ▌             ▐  ░     |                        │
+│        |                 ░  ▌             ▐  ░   d =   6.00 in.             │
+│        |                 ░  ▌             ▐  ░     |                        │
+│     h =   8.00 in.       ░  ▌             ▐  ░     |                        │
+│        |                 ░  ▌             ▐  ░     |                        │
+│        |                 ░  ▌             ▐  ░     |                        │
+│        |                 ░  ▌  rebars     ▐  ░     |                        │
+│        |                 ░  ▌ /           ▐  ░     |                        │
+│        |                 ░  ▌*  *  *  *  *▐- ░     |  - - -+                │
+│        |                 ░  ▌             ▐  ░     |       | 1" min. clear  │
+│        |  Center Steel---░ -▌*  *  *  *  *▐- ░-----+  - - -+                │
+│        |                 ░  ▌             ▐  ░             | dsteel         │
+│        |                 ░  ▌*  *  *  *  *▐-_░-----+-_-_-_-+ ½ rebar φ      │
+│        |    Stir. Bot.---░--▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀- ░     |- - - -+ stirrup φ      │
+│        |                 ░   |  |            ░     dc      | ≈1½" protection│
+│        |___ Beam  Bot.___░░░░░░░░░░░░░░░░░░░░░_____|  _ _ _|                │
+│                          |   |  |                                           │
+│                          |   |  |                                           │
+│                          +---+--+                                           │
+│ clear cover on stirrup    1½"  └─────────────── barφ   C.L. to C.L. or bars │
+│       stirrup diameter  ≈3/8"                     1"   clear spacing=1" min.│
+│     to center of rebar  ½barφ                 ======                        │
+│                       =======        1+Bar/8 =  1.88 in. min.               │
+│   1.5+Stir/8+Bar/8/2 =   2.31 in.min.                                       │
+│                                                                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  CHECK: Concrete Cover                                                      │
+│                                                                             │
+│     *   All Steel including the reinforcement, must be adequately           │
+│         covered by concrete.  Appendix A lists the cover on reinforcing     │
+│         steel in detail (page 14-37).  However a minimum of 1-1/2 inches    │
+│         of cover is generally required.                                     │
+│                                                                             │
+│     *   The clear distance between bars:                                    │
+│         one bar diameter or 1 inch minimum, which ever is greater.          │
+│                                                                             │
+│     *   The minimum clear distance between layers is 1".                    │
+│                                                                             │
+│     *   Table 14.5 is easily derived from the clear spacing and depth       │
+│         of cover requirements of the ACI code (see Appendix A). The table   │
+│         assumes that #3 stirrups will be used, and cover is provided for    │
+│         them.  If no stirrups are used then deduct 3/4" from the table      │
+│         values.  For additional bars horizontally, increase the beam        │
+│         width by adding the value in the last column.                       │
+│                                                                             │
+│                Table 14.5 MINIMUM BEAM WIDTH w/#3 Stirrups                  │
+│                                                                add for      │
+│         bar     No. of bars in single layer of reinforcement   each         │
+│         size    2      3      4      5      6      7      8    added bar    │
+│         ----- -----  -----  -----  -----  -----  -----  -----  ---------    │
+│         #4     6.1    7.6    9.1   10.6   12.1   13.6   15.1     1.5        │
+│         #5     6.3    7.9    9.6   11.2   12.8   14.4   16.1     1.63       │
+│         #6     6.5    8.3   10.0   11.8   13.5   15.3   17.0     1.75       │
+│         #7     6.7    8.6   10.5   12.4   14.2   16.1   18.0     1.88       │
+│         #8     6.9    8.9   10.9   12.9   14.9   16.9   18.9     2.0        │
+│         #9     7.3    9.5   11.8   14.0   16.3   18.6   20.8     2.26       │
+│         #10    7.7   10.2   12.8   15.3   17.8   20.4   22.9     2.54       │
+│         #11    8.0   10.8   13.7   16.5   19.3   22.1   24.9     2.82       │
+│         #14    8.9   12.3   15.6   19.0   22.4   25.8   29.2     3.39       │
+│         #18   10.5   15.0   19.5   24.0   28.6   33.1   37.6     4.51       │
+╘═════════════════════════════════════════════════════════════════════════════╛
