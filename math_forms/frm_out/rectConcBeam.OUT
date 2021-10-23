@@ -101,11 +101,10 @@
 |                                                                             |
 |      β1 = 0.65 <= 0.85 - ((f'c - 4000psi)/1000)) x 0.05 <= 0.85            |
 |                                                                             |
-|    Balance  Factor    ß1  =   0.750                                        |
+|    Balance  Factor    β1  =   0.750                                        |
 |                                                                             |
 |Solve for c:                                                                 |
-RPN Error: 
-|    c = a / β1  =   0.750 in.                                               |
+|    c = a / β1  =   1.732 in.                                               |
 +-----------------------------------------------------------------------------+
 |- With c, we can calculate the strain in the steel using similar triangles.  |
 |    With this strain calculated, we can check our assumption that the steel  |
@@ -115,7 +114,7 @@ RPN Error: 
 |                                                                             |
 |Solve for εt:                                                               |
 |     εt = (d x εc)/c - εc                                                 |
-|     εt = (d * εc)/c - εc  =    +Inf                                      |
+|     εt = (d * εc)/c - εc  =  0.0344                                      |
 |                                                                             |
 |    note: The assumed concrete compression strain (εc)                      |
 |          was 0.003 at nominal strength.                                     |
@@ -136,14 +135,14 @@ RPN Error: 
 |                                                                             |
 |  Check if  εy < εt:                                                       |
 |    εy = 0.00207 is less than                                               |
-|    εt =    +Inf                                                            |
+|    εt = 0.03445                                                            |
 |    Therefore our assumption that the steel yields is correct,               |
 |    and the stress in the steel may be taken as 60 ksi at failure.           |
 |                                                                             |
 |- Determine if the section is tension controlled:                            |
 |  - Per ACI section 10.3.4 a beam is considered tension controlled if the    |
 |    strain in the extreme tension steel is greater than 0.005.               |
-|  - The calculated steel strain in our section is  εt  =    +Inf            |
+|  - The calculated steel strain in our section is  εt  = 0.03445            |
 |    is greater than 0.005 therefore this beam section is tension controlled. |
 +-----------------------------------------------------------------------------+
 |- Next, let's determine if the beam section satisfies the minimum steel      |

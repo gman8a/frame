@@ -1,19 +1,20 @@
 .c NOTE: this form uses character mapping: Unicode character UTF-8; as sourced from within the PDF file.
 .c  using frame .Look 3 because not converting the framing characters from CP437 to UTF-8
-.c              This is because some UTF-8 char. do not map into CP437, in particular:
-.c                      GREEK SMALL LETTER BETA:  UTF9: <CE><B2>   CP437: 225
+.c		This is because some UTF-8 char. do not map into CP437, in particular:
+.c		GREEK SMALL LETTER BETA:  UTF9: <CE><B2>   CP437: 225
 .c
-.c              see URL: https://en.wikipedia.org/wiki/Code_page_437
-.c              see URL: https://jdhao.github.io/2020/10/07/nvim_insert_unicode_char/
+.c		see URL: https://en.wikipedia.org/wiki/Code_page_437
+.c		see URL: https://jdhao.github.io/2020/10/07/nvim_insert_unicode_char/
 .c 
 .c BEAM DESIGN SOURCE
-.c      http://www.civilpe.net/wp-content/uploads/2012/08/Reinforced-Concrete-Beam-Design-ACI-318-08.pdf
-.c      https://pdfcoffee.com/reinforced-concrete-beam-design-aci-318-08-pdf-free.html              
+.c	http://www.civilpe.net/wp-content/uploads/2012/08/Reinforced-Concrete-Beam-Design-ACI-318-08.pdf
+.c	https://pdfcoffee.com/reinforced-concrete-beam-design-aci-318-08-pdf-free.html              
 .c
+.c  How to Insert Unicode Characters in Neovim/Vim;   https://jdhao.github.io/2020/10/07/nvim_insert_unicode_char/
 .L3
 .T
 	Reinforced Concrete Beam Design ACI 318-08
-              
+
   Required:
     - Determine the nominal moment capacity, ΦMn
     - Determine the nominal shear capacity, ΦVn
@@ -55,11 +56,11 @@
 .d a       = f54  ; depth of Whitney stress block
 .d c       = f55  ; depth to the neutral axis
 .c
-.d ß1      = f21
+.d β1      = f21
 .d εc      = 0.003 ; assumed concrete compression strain at nominal strength.
 .d εt      = f56
 .d εy      = f57   ; yield strain
-.d E       = 29e6  ; Young’s modulus which is generally accepted to be 29,000 ksi for steel
+.d E       = 29e6  ; Young's modulus which is generally accepted to be 29,000 ksi for steel
 .d σb      = f58   ; balanced ratio of steel to concrete
 .d σ       = f59   ; working  ratio of steel to concrete
 .d σ_min   = f60   ; working  ratio of steel to concrete
@@ -159,13 +160,13 @@ User input:
       β1 = 0.65 <= 0.85 - ((f'c - 4000psi)/1000)) x 0.05 <= 0.85
       
 .c
-.c `ß1=0.85`   `f'c - 4000`
+.c `β1=0.85`   `f'c - 4000`
 .g lt4000 eq4000 gt4000
 .:gt4000
-.c `ß1 = 0.85 - 0.05 * (f'c-4000)/1000`     when   4000 ≤ f'c ≤ 8000
+.c `β1 = 0.85 - 0.05 * (f'c-4000)/1000`     when   4000 ≤ f'c ≤ 8000
 .:lt4000
 .:eq4000
-    Balance  Factor   `ß1` = %v:6:3%
+    Balance  Factor   `β1` = %v:6:3%
 
 Solve for c:
    `c = a / β1` = %v:8:3% in.
